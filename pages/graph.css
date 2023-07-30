@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.graph-main {
+    display: grid;
+    grid-template-rows: 20% 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+  }
+  
+  .top-box {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    margin: auto auto;
+    height: 50%;
+    width: 50%;
+  }
+
+  .chart-box-3 {
+    grid: 1 / span 1;
+    grid-column: 1 / span 2;
+    width: 99.5%;
+    height: 38vh;
+  }
+
+  .prev-btn {
+    width: 25%;
+    height: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-box {
+    width: 99.5%;
+    height: 38vh;
+  }
+  
+  .chart-select {
+    width: 100%;
+  }
+
+  .chart-canvas {
+    padding: 0rem;
+    margin: auto;
+    width: 700px;
+  }
