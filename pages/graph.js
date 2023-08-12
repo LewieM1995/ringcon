@@ -22,7 +22,7 @@ function graph() {
       try {
         const response = await fetch(`${db}?productSize=${productSize}`);
         const result = await response.json();
-        console.log(result);
+        //console.log(result);
         setData(result);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -44,7 +44,7 @@ function graph() {
 
   const hLimitsArray = [
     {lowerLimit: 240, upperLimit: 255},
-    {lowerLimit: 260, upperLimit: 268},
+    {lowerLimit: 260, upperLimit: 272},
     {lowerLimit: 260, upperLimit: 280},
   ];
   
