@@ -38,14 +38,14 @@ function graph() {
 
   const limitsArray = [
     { lowerLimit: 180, upperLimit: 240 },
-    { lowerLimit: 235, upperLimit: 275 },
+    { lowerLimit: 245, upperLimit: 270 },
     { lowerLimit: 255, upperLimit: 290 },
   ];
 
   const hLimitsArray = [
-    {lowerLimit: 245, upperLimit: 260},
-    {lowerLimit: 255, upperLimit: 270},
-    {lowerLimit: 265, upperLimit: 280},
+    {lowerLimit: 240, upperLimit: 255},
+    {lowerLimit: 260, upperLimit: 268},
+    {lowerLimit: 260, upperLimit: 280},
   ];
   
   const testfunc = (productSize, limitType) => {
@@ -74,8 +74,8 @@ function graph() {
       const minimumWallThicknessData = data.map((item) => parseFloat(item.minimum_wall_thickness));
   
       // Define the range of lower and upper end values
-      const lowerEnd = 0.9;
-      const upperEnd = 1.3;
+      const lowerEnd = 0.85;
+      const upperEnd = 1.25;
   
       // Calculate lower end and upper end values based on mean and range
       const lowerEndValue = minimumWallThicknessData.filter((value) => value < lowerEnd).length;
@@ -110,7 +110,7 @@ function graph() {
         <Charts data={data.map(item => item.weight)} lowerLimit={testfunc(productSize, 'lowerLimit')} upperLimit={testfunc(productSize, 'upperLimit')} yAxisLabel={'Weight  (G)'} labels={labelMap} type='line' label={`(${productSize}) Weight`} />
       </div>
       <div className="chart-box">
-        <Charts data={calculateBarData(data)} yAxisLabel={'Min Wall  (mm)'} lowerLimit={0} upperLimit={50} labels={['Lower', 'Mean', 'Upper']} type='bar' label={`(${productSize}) Min Wall Thickness`}/>
+        <Charts data={calculateBarData(data)} yAxisLabel={'Min Wall  (mm)'} lowerLimit={0} upperLimit={50} labels={['Lower (0.7-0.85)', 'Mean (0.86-0.125)', 'Upper(0.126-0.15)']} type='bar' label={`(${productSize}) Min Wall Thickness`}/>
       </div>
       <div className="chart-box-3">
         <Charts data={data.map(item => item.height)} yAxisLabel={'Height  (mm)'} lowerLimit={testfuncTwo(productSize, 'lowerLimit')} upperLimit={testfuncTwo(productSize, 'upperLimit')} labels={labelMap} type='line' label={`(${productSize}) Height`}/>

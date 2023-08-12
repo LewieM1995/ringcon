@@ -29,6 +29,7 @@
     width: 25%;
     height: 50%;
     margin-bottom: 1rem;
+    cursor: pointer;
   }
   
   .chart-box {

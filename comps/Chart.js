@@ -27,6 +27,7 @@ const ChartComponent = ({ data, type, labels, label, lowerLimit, upperLimit, yAx
               label: label,
               data: data,
               backgroundColor: 'rgba(255, 0, 0, 0.5)',
+              tension: 0.5
             },
           ],
         },
