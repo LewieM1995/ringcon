@@ -77,6 +77,11 @@ export default function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
+      alert('Please fill in all required fields.');
+      return;
+  }
+  
     const logObject = {
       shiftValue,
       operatorName,
@@ -91,9 +96,8 @@ export default function Home() {
       minWallThickness
     };
 
-    console.log(logObject);
+    //console.log(logObject);
   
-    // Send the form data to the backend API endpoint
     fetch(db, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=UTF-8' },
@@ -113,17 +117,13 @@ export default function Home() {
     })
       .then((response) => response.json())
       .then((info) => {
-        // Handle the response from the backend if needed
         console.log('Response:', info);
       })
       .catch((error) => {
-        // Handle any errors that occurred during the request
         console.error('Error:', error);
       });
   };
 
-
-  const [login, isLogin] = useState(false)
 
   return (
     <main className="main-container">

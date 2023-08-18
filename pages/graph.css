@@ -15,7 +15,13 @@
     grid-column: 1 / span 2;
     margin: auto auto;
     height: 50%;
-    width: 50%;
+    width: 30%;
+  }
+
+  .link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .chart-box-3 {
@@ -23,13 +29,6 @@
     grid-column: 1 / span 2;
     width: 99.5%;
     height: 38vh;
-  }
-
-  .prev-btn {
-    width: 25%;
-    height: 50%;
-    margin-bottom: 1rem;
-    cursor: pointer;
   }
   
   .chart-box {
@@ -46,3 +45,48 @@
     margin: auto;
     width: 700px;
   }
+
+
+/* data_tables CCS */
+
+
+  .data-main {
+    height: 100vh;
+  } 
+  
+  .data-top-box {
+    height: 20%;
+    width: 30%;
+    margin: 1rem auto ;
+  }
+
+  .data-table-wrapper {
+    width: 90%;
+    margin: auto;
+  }
+
+  .database-table {
+    width: 100%;
+    height: 80%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  
+  .database-table th, .database-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  .database-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .database-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .database-table tr:hover {
+    background-color: #e0e0e0;
+  }
+  

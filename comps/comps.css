@@ -51,12 +51,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.submit-container button {
-    height: 55px;
-    width: 150px;
-    cursor: pointer;
+    margin: 10px;
 }
 
 
@@ -68,16 +63,4 @@ h1 {
     height: 70vh;
     display: flex;
     justify-content: center;
-}
-
-.btn {
-    background-color: black;
-    color: aliceblue;
-    border: 3px black solid;
-}
-
-.btn:hover {
-    color: black;
-    background-color: white;
-    border: 1px black solid;
 }
