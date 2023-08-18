@@ -18,13 +18,14 @@ function data_tables() {
   const [data, setData] = useState([]);
   const handleDropdownChange = (selectedOption) => {
     setSelectedOption(selectedOption);
-    setCurrentPage(1);
+      setCurrentPage(1);
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(data.length / itemsPerPage);
+  const hasMoreData = data.length > 0 && currentItems.length === itemsPerPage;
 
   useEffect(() => {
     const fetchData = async (productSize) => {
@@ -74,6 +75,7 @@ function data_tables() {
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
+        hasMoreData={hasMoreData}
       />
       <br/>
         <table className="database-table">

@@ -6,7 +6,7 @@ import '../pages/graph.css'
 import Dropdown from '../comps/DropDown';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { calculateBarData, testfunc, testfuncTwo } from './CalcBarData';
+import { calculateBarData, testfunc, testfuncTwo } from '../comps/CalcBarData';
 
 
 function graph() {
