@@ -65,7 +65,7 @@ function data_tables() {
             onChange={handleDropdownChange}
             />
             <Form>
-              <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group>
                 <Form.Control style={{marginTop: '5px'}}type="text" placeholder="Search database..." />
               </Form.Group>
             </Form>

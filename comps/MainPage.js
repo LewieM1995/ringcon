@@ -33,6 +33,7 @@ export default function Home() {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [minWallThickness, setMinWallThickness] = useState('');
+  //CHANGE BOTTOMM THREE USESTATE TO USEREF, Handle needs to change and value set to weightRef etc
     
   
   const handleSeamInspec = (seamInspection) => {
@@ -81,22 +82,6 @@ export default function Home() {
       alert('Please fill in all required fields.');
       return;
   }
-  
-    const logObject = {
-      shiftValue,
-      operatorName,
-      lineValue,
-      typeCheck,
-      selectedSize,
-      selectCavity,
-      inspectionValue,
-      seamInspection,
-      weight,
-      height,
-      minWallThickness
-    };
-
-    //console.log(logObject);
   
     fetch(db, {
       method: 'POST',
