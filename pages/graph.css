@@ -3,7 +3,8 @@
     box-sizing: border-box;
 }
 
-.graph-main {
+
+  .graph-main {
     display: grid;
     grid-template-rows: 20% 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -14,8 +15,8 @@
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
     margin: auto auto;
-    height: 50%;
-    width: 30%;
+    height: 200px;
+    width: 600px;
   }
 
   .link-container {
@@ -46,18 +47,44 @@
     width: 700px;
   }
 
+  @media screen and (max-width: 768px) {
+    .graph-main {
+      grid-template-rows: 20% 1fr 1fr;
+      grid-template-columns: 1fr;
+    }
+  
+    .top-box {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+      width: 100%;
+    }
+  
+    .chart-box-3 {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 1;
+      width: 100%;
+    }
+    
+  }
+
 
 /* data_tables CCS */
 
 
   .data-main {
-    height: 100vh;
+    height: 128vh;
   } 
   
   .data-top-box {
     height: 20%;
     width: 30%;
     margin: 1rem auto ;
+  }
+
+  @media screen and (max-width: 900px) {
+    .data-top-box {
+      width: 400px;
+    }
   }
 
   .data-table-wrapper {

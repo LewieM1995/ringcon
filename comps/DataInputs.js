@@ -62,9 +62,9 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
 
 
   return (
-    <div className='data-inputs-container'>
-        <section>
-            <h2>Product Details</h2>
+    <div className='pd-bi-m-container'>
+    <h1>Product Details</h1>
+        <section className='product-details'>
             <div className="input-div">
                 <label>Check Type</label>
                 <Dropdown options={checkType} value={typeCheck} onChange={handleTypeCheck} />
@@ -78,8 +78,8 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
                 <Dropdown options={cavity} value={selectCavity} onChange={handleCavity} />
             </div>
         </section>
+    <h1>Basic Inspection</h1>
         <section>
-            <h2>Basic Inspections</h2>
             <div className="input-div">
                 <label>Visual Inspection</label>
                 <Dropdown options={visualInspection} value={inspectionValue} onChange={handleVisualInspec} />
@@ -89,8 +89,8 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
                 <Dropdown options={seamInspec} value={seamInspection} onChange={handleSeamInspec} />
             </div>
         </section>
-        <section>
-            <h2>Measurements</h2>
+    <h1>Measurements</h1>
+        <section className='measurements'>
             <div className="input-div">
                 <label>Weight(Grams) : {weightString}</label>
                 <input type="number" placeholder="Gram Weight" className='custom-input' value={weight} onChange={handleWeight}/>
@@ -100,7 +100,7 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
                 <input type="number" placeholder="Height in millimetres" className='custom-input' value={height} onChange={handleHeight}/>
             </div>
             <div className="input-div">
-                <label>Minimum Wall Thickness : Enter a Number Between 0.7 - 1.4</label>
+                <label>Min Wall : Input a number between 0.7 - 1.4</label>
                 <input type="number" placeholder="Minimum Wall Thickness" className='custom-input' value={minWallThickness} onChange={handleMinWallThickness}/>
             </div>
         </section>

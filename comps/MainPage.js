@@ -1,7 +1,6 @@
 'use client';
 
-import 'src/app/globals.css';
-import DrpDwnInputs from '../comps/DrpDwnInputs';
+import MachineDetails from './MachineDetails';
 import DataInputs from '../comps/DataInputs';
 import Submit from '../comps/Submit';
 import { useState } from 'react';
@@ -113,9 +112,7 @@ export default function Home() {
   return (
     <main className="main-container">
         <form onSubmit={handleSubmit}>
-          <div className='second-container'>
-            <div className='dropdown-container'>
-              <DrpDwnInputs
+              <MachineDetails
                 shiftValue={shiftValue}
                 handleShift={handleShift}
                 operatorName={operatorName}
@@ -123,8 +120,6 @@ export default function Home() {
                 lineValue={lineValue}
                 handleLineValue={handleLineValue}
               />
-            </div>
-            <div className='input-container'>
               <DataInputs
                 typeCheck={typeCheck}
                 handleTypeCheck={handleTypeCheck}
@@ -143,8 +138,6 @@ export default function Home() {
                 minWallThickness={minWallThickness}
                 handleMinWallThickness={handleMinWallThickness}
               />
-            </div>
-          </div>
             <Submit  />
         </form>
     </main>

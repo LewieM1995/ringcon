@@ -70,9 +70,9 @@ function graph() {
         <Charts data={data.map(item => item.weight)} lowerLimit={testfunc(productSize, 'lowerLimit')} upperLimit={testfunc(productSize, 'upperLimit')} yAxisLabel={'Weight  (G)'} labels={labelMap} type='line' label={`(${productSize}) Weight`} />
       </div>
       <div className="chart-box">
-        <Charts data={calculateBarData(data)} yAxisLabel={'Min Wall  (mm)'} lowerLimit={0} upperLimit={50} labels={['Lower (0.7-0.85)', 'Mean (0.86-0.125)', 'Upper(0.126-0.15)']} type='bar' label={`(${productSize}) Min Wall Thickness`}/>
+        <Charts data={calculateBarData(data)} yAxisLabel={'Min Wall  (mm)'} lowerLimit={0} upperLimit={50} labels={['Lower (0.7 - 0.85mm)', 'Mean (0.86 - 0.125mm)', 'Upper(0.126 - 0.15mm)']} type='bar' label={`(${productSize}) Min Wall Thickness`}/>
       </div>
-      <div className="chart-box-3">
+      <div className="chart-box">
         <Charts data={data.map(item => item.height)} yAxisLabel={'Height  (mm)'} lowerLimit={testfuncTwo(productSize, 'lowerLimit')} upperLimit={testfuncTwo(productSize, 'upperLimit')} labels={labelMap} type='line' label={`(${productSize}) Height`}/>
       </div> 
     </main>

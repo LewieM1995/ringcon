@@ -66,7 +66,7 @@ function data_tables() {
             />
             <Form>
               <Form.Group>
-                <Form.Control style={{marginTop: '5px'}}type="text" placeholder="Search database..." />
+                <Form.Control style={{marginTop: '5px'}}type="text" placeholder="Search for data..." />
               </Form.Group>
             </Form>
         </div>
