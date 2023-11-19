@@ -5,7 +5,7 @@ import DataInputs from '../comps/DataInputs';
 import Submit from '../comps/Submit';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../comps/comps.css'
+import './comps.css'
 
 export default function Home() {
 
@@ -110,17 +110,16 @@ export default function Home() {
 
 
   return (
-    <main className="main-container">
-        <form onSubmit={handleSubmit}>
-              <MachineDetails
+    <form id='data-input-form' onSubmit={handleSubmit}>
+          <MachineDetails
                 shiftValue={shiftValue}
                 handleShift={handleShift}
                 operatorName={operatorName}
                 handleOperatorName={handleOperatorName}
                 lineValue={lineValue}
                 handleLineValue={handleLineValue}
-              />
-              <DataInputs
+          />
+          <DataInputs
                 typeCheck={typeCheck}
                 handleTypeCheck={handleTypeCheck}
                 selectedSize={selectedSize}
@@ -137,9 +136,8 @@ export default function Home() {
                 handleHeight={handleHeight}
                 minWallThickness={minWallThickness}
                 handleMinWallThickness={handleMinWallThickness}
-              />
-            <Submit  />
-        </form>
-    </main>
-   )
-  }
+          />
+        <Submit  />
+    </form>
+   );
+  };

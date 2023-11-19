@@ -62,49 +62,37 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
 
 
   return (
-    <div className='pd-bi-m-container'>
+    <section className='data-inputs-container'>
     <h1>Product Details</h1>
-        <section className='product-details'>
-            <div className="input-div">
-                <label>Check Type</label>
-                <Dropdown options={checkType} value={typeCheck} onChange={handleTypeCheck} />
-            </div>
-            <div className="input-div">
-                <label>Product Size</label>
-                <Dropdown options={productSize} value={selectedSize} onChange={handleSize} />
-            </div>
-            <div className="input-div">
-                <label>Cavity</label>
-                <Dropdown options={cavity} value={selectCavity} onChange={handleCavity} />
-            </div>
-        </section>
+        <div className='production-inputs'>
+            <label>Check Type</label>
+            <Dropdown options={checkType} value={typeCheck} onChange={handleTypeCheck} />
+            <label>Product Size</label>
+            <Dropdown options={productSize} value={selectedSize} onChange={handleSize} />
+            <label>Cavity</label><Dropdown options={cavity} value={selectCavity} onChange={handleCavity} />    
+        </div>
     <h1>Basic Inspection</h1>
-        <section>
-            <div className="input-div">
-                <label>Visual Inspection</label>
-                <Dropdown options={visualInspection} value={inspectionValue} onChange={handleVisualInspec} />
-            </div>
-            <div className="input-div">
-                <label>Seam Inspection</label>
-                <Dropdown options={seamInspec} value={seamInspection} onChange={handleSeamInspec} />
-            </div>
-        </section>
+        <div className='basic-inputs' >
+            <label>Visual Inspection</label>
+            <Dropdown options={visualInspection} value={inspectionValue} onChange={handleVisualInspec} />
+            <label>Seam Inspection</label>
+            <Dropdown options={seamInspec} value={seamInspection} onChange={handleSeamInspec} />
+        </div>
     <h1>Measurements</h1>
-        <section className='measurements'>
-            <div className="input-div">
-                <label>Weight(Grams) : {weightString}</label>
-                <input type="number" placeholder="Gram Weight" className='custom-input' value={weight} onChange={handleWeight}/>
-            </div>
-            <div className="input-div">
-                <label>Height(mm) : {sizeString} </label>
-                <input type="number" placeholder="Height in millimetres" className='custom-input' value={height} onChange={handleHeight}/>
-            </div>
-            <div className="input-div">
-                <label>Min Wall : Input a number between 0.7 - 1.4</label>
-                <input type="number" placeholder="Minimum Wall Thickness" className='custom-input' value={minWallThickness} onChange={handleMinWallThickness}/>
-            </div>
-        </section>
-    </div>
+        <div className='measurement-inputs'>
+            <label>Weight(Grams):</label>
+            <br/>
+            <input type="number" placeholder={weightString} value={weight} onChange={handleWeight}/>
+            <br/>
+            <label>Height(mm):</label>
+            <br/>
+            <input type="number" placeholder={sizeString} value={height} onChange={handleHeight}/>
+            <br/>
+            <label>Min Wall:</label>
+            <br/>
+            <input type="number" placeholder="0.7 - 1.4" value={minWallThickness} onChange={handleMinWallThickness}/>
+        </div>
+    </section>
   )
 }
 

@@ -4,11 +4,10 @@ import { Button } from 'react-bootstrap';
 
 function Submit() {
   return (
-
     <div className='submit-container'>
-        <Button type="submit" style={{margin: '10px', width: '120px'}}>Submit Data</Button>
-        <Link href="/graph">
-          <Button style={{width: '120px'}}>Next Page</Button>
+        <Button type="submit">Submit Data</Button>
+        <Link href="/graphs">
+          <Button>Next Page</Button>
         </Link>
     </div>
   )

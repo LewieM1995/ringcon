@@ -1,11 +1,10 @@
-"use client";
 
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
 
 
-const ChartComponent = ({ data, type, labels, label, lowerLimit, upperLimit, yAxisLabel }) => {
+const ChartComponent = ({ barColors, data, type, labels, label, lowerLimit, upperLimit, yAxisLabel }) => {
 
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
@@ -26,7 +25,7 @@ const ChartComponent = ({ data, type, labels, label, lowerLimit, upperLimit, yAx
             {
               label: label,
               data: data,
-              backgroundColor: 'rgba(255, 0, 0, 0.5)',
+              backgroundColor: barColors || 'rgba(255, 0, 0, 0.5)',
               tension: 0.5
             },
           ],

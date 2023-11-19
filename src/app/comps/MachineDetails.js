@@ -27,23 +27,17 @@ function DrpDwnInputs( {shiftValue, lineValue, operatorName, handleLineValue, ha
 
 
   return (
-    <div className='machine_details'>
+    <section className='machine-details-container'>
       <h1>Machine Details</h1>
-      <section className='md-section'>
-          <div className="input-div">
+      <div className='machine-details'>
           <label>Shift</label>
-          <Dropdown options={shifts} value={shiftValue} onChange={handleShift} className='custom-input-2'/>
-          </div>
-          <div className="input-div">
+          <Dropdown options={shifts} value={shiftValue} onChange={handleShift}/>
           <label>Operator</label>
-          <Dropdown options={operator} value={operatorName} onChange={handleOperatorName} className='custom-input-2'/>
-          </div>
-          <div className="input-div">
+          <Dropdown options={operator} value={operatorName} onChange={handleOperatorName}/>
           <label>Line</label>
-          <Dropdown options={line} value={lineValue} onChange={handleLineValue} className='custom-input-2'/>
-          </div>    
-      </section>
-    </div>
+          <Dropdown options={line} value={lineValue} onChange={handleLineValue}/>
+      </div>
+    </section>
   )
 }
 

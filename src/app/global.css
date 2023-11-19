@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+    background-color: rgba(36, 35, 36, 0.932);
+}
+
+.main .main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container h1,
+.main-container label {
+    color: aliceblue;
+}
+
+@media (min-width: 768px){
+    .main-container {
+     width: 100%;
+     margin: auto;
+    }
+ }

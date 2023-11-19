@@ -1,0 +1,48 @@
+
+
+.main-container h2 {
+    color: aliceblue;
+}
+
+.nav-btn-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.nav-btn-container button {
+   margin: 10px;
+}
+
+.dropdown-container {
+  padding: 20px;
+}
+
+.chart-section {
+  padding: 20px;
+}
+
+.chart-canvas {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
+
+@media (min-width: 768px){
+  .dropdown-container {
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+  }
+  .chart-section {
+    width: 700px;
+    margin: auto;
+  }
+  .chart-canvas {
+    padding: 10px;
+
+  }
+}
