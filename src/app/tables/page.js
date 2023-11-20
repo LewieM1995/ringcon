@@ -73,7 +73,6 @@ function data_tables() {
             </Form.Group>
           </Form>
       </div>
-      
       <div className="table-container">
       {selectedOption && (
         <table className="output-table" >
