@@ -28,10 +28,10 @@
 .basic-inputs,
 .measurement-inputs {
     width: 90%;
-    margin-bottom: 1rem;
+    margin: 10px auto 20px auto
 }
 
-.measurement-inputs input {
+.measurement-inputs label, input {
     width: 100%;
 }
 
@@ -53,7 +53,7 @@
 
 @media (min-width: 768px){
     #data-input-form {
-        width: 500px;
+        width: 400px;
         margin: auto;
     }
   }
