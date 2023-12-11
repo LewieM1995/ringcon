@@ -10,7 +10,6 @@ This project is a simplified application intended to facilitate the input of Qua
 ## Installation Instructions
 Clone the Repository:
 
-bash
 git clone https://github.com/LewieM1995/ringcon.git
 cd ringcon
 
