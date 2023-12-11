@@ -4,7 +4,9 @@ This project is a simplified application intended to facilitate the input of Qua
 
 ## Updates for Consideration
 1.Edge Case Handling: Implement robust error handling and data validation to ensure only appropriate data is submitted.
+
 2.User Privileges: Introduce a role-based system to restrict access where necessary for certain roles.
+
 3.Enhanced Graphs: Add more dynamic controls for graphs. Allow for more concise data visualization.
 
 ## Installation Instructions
