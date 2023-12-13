@@ -82,15 +82,15 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
         <div className='measurement-inputs'>
             <label>Weight(Grams):</label>
             <br/>
-            <input type="text" inputMode='numeric' pattern='[0-9]' placeholder={weightString} value={weight} onChange={handleWeight}/>
+            <input type="text" inputMode='numeric' pattern='[0-9.]' placeholder={weightString} value={weight} onChange={handleWeight}/>
             <br/>
             <label>Height(mm):</label>
             <br/>
-            <input type="text" inputMode='numeric' pattern='[0-9]' placeholder={sizeString} value={height} onChange={handleHeight}/>
+            <input type="text" inputMode='numeric' pattern='[0-9.]' placeholder={sizeString} value={height} onChange={handleHeight}/>
             <br/>
             <label>Min Wall:</label>
             <br/>
-            <input type="text" inputMode='numeric' pattern='[0-9]' placeholder="0.7 - 1.4" value={minWallThickness} onChange={handleMinWallThickness}/>
+            <input type="text" inputMode='numeric' pattern='[0-9.]' placeholder="0.7 - 1.4" value={minWallThickness} onChange={handleMinWallThickness}/>
         </div>
     </section>
   )
