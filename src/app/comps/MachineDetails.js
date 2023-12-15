@@ -1,7 +1,7 @@
 "use client";
 
 import '../comps/comps.css'
-import Dropdown from './DropDown';
+import Dropdown from '../../../sharedcomps/DropDown';
 
 function DrpDwnInputs( {shiftValue, lineValue, operatorName, handleLineValue, handleOperatorName, handleShift} ) {
 

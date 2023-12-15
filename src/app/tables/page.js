@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import Dropdown from "../comps/DropDown";
+import Dropdown from "../../../sharedcomps/DropDown";
 import Link from 'next/link';
 import './table.css'
 import { Button, Form } from "react-bootstrap";

@@ -1,7 +1,7 @@
 "use client";
 
 import '../comps/comps.css'
-import Dropdown from './DropDown';
+import Dropdown from '../../../sharedcomps/DropDown';
 
 function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, seamInspection, handleCavity, handleSeamInspec, handleSize, handleTypeCheck, handleVisualInspec, weight, handleWeight, handleHeight, height, handleMinWallThickness, minWallThickness }) {
 

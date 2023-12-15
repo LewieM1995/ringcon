@@ -5,7 +5,7 @@ import Charts from './Chart';
 import Link from 'next/link';
 import { useState } from 'react';
 import './graph.css';
-import Dropdown from '../comps/DropDown';
+import Dropdown from '../../../sharedcomps/DropDown';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { calculateBarData, testfunc, testfuncTwo } from './CalcBarData';

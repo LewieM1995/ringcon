@@ -4,12 +4,14 @@ body {
 }
 
 .main .main-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: (2, 1fr);
 }
 
 .main-container h1,
-.main-container label {
+.main-container label, 
+.main-container p,
+.main-container h3 {
     color: aliceblue;
 }
 
