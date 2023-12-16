@@ -1,37 +1,13 @@
 
-
-.machine-details-container {
-   padding: 10px;
-}
-
-.machine-details-container h1{
-    text-align: center;
- }
-
-.machine-details {
-    width: 90%;
-}
-
-.machine-details label, div {
-   margin: auto auto;
-}
-
+.machine-details-container,
 .data-inputs-container {
-    padding: 10px;
+    width: 80%;
+    margin: auto;
 }
 
-.data-inputs-container h1 {
-    text-align: center;
-}
-
-.production-inputs,
-.basic-inputs,
-.measurement-inputs {
-    width: 90%;
-    margin: 10px auto 20px auto
-}
-
-.measurement-inputs label, input {
+.measurement-inputs input {
+    border-radius: 5px;
+    padding-left: 10px;
     width: 100%;
 }
 

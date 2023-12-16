@@ -14,7 +14,7 @@ import { calculateBarData, testfunc, testfuncTwo } from './CalcBarData';
 function graph() {
 
   const [selectedOption, setSelectedOption] = useState(null);
-  const db = 'http://localhost:8080/data';
+  const db = 'http://localhost:4000/data';
   const productSize = selectedOption?.value;
 
   const [data, setData] = useState([]);

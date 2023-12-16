@@ -72,10 +72,10 @@ export default function Home() {
     }
   };
 
-  const db = 'http://localhost:8080/data';
+  const db = 'http://localhost:4000/data';
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
 
     if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
       alert('Please fill in all required fields.');
