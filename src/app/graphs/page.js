@@ -14,7 +14,7 @@ import { calculateBarData, testfunc, testfuncTwo } from './CalcBarData';
 function graph() {
 
   const [selectedOption, setSelectedOption] = useState(null);
-  const db = 'https://policeappserver.duckdns.org:4000/data';
+  const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
   const productSize = selectedOption?.value;
 
   const [data, setData] = useState([]);

@@ -72,7 +72,7 @@ export default function Home() {
     }
   };
 
-  const db = 'https://policeappserver.duckdns.org:4000/data';
+  const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
 
   const handleSubmit = (event) => {
     event.preventDefault();

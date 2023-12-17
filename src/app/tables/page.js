@@ -13,7 +13,7 @@ function data_tables() {
 
   const [filterQuery, setFilterQuery] = useState('');
   const [selectedOption, setSelectedOption] = useState(null);
-  const db = 'https://policeappserver.duckdns.org:4000/data_table';
+  const db = 'https://policeappserver.duckdns.org:4000/ringcon/data_table';
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15
   //const productSize = selectedOption?.value;
