@@ -74,13 +74,14 @@ export default function Home() {
 
   const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
 
-  const handleSubmit = (event) => {
-    //event.preventDefault();
+  const handleSubmit = async (event) => {
+    try { 
+      event.preventDefault();
 
-    if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
+      if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
       alert('Please fill in all required fields.');
       return;
-  }
+    };
   
     fetch(db, {
       method: 'POST',
@@ -98,14 +99,14 @@ export default function Home() {
         height: height,
         minimum_wall_thickness: minWallThickness
       })
-    })
-      .then((response) => response.json())
-      .then((info) => {
-        //console.log('Response:', info);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    });
+      if (!response.ok){
+        throw new Error(`HTTP error! Status ${response.status}`);
+      }
+      event.target.reset();
+    } catch (error) {
+      console.error('Error', error.message);
+    }
   };
 
 
