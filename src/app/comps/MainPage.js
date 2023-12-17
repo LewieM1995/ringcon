@@ -72,10 +72,10 @@ export default function Home() {
     }
   };
 
-  const db = 'http://localhost:4000/data';
+  const db = 'https://policeappserver.duckdns.org:4000/data';
 
   const handleSubmit = (event) => {
-    //event.preventDefault();
+    event.preventDefault();
 
     if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
       alert('Please fill in all required fields.');
@@ -101,7 +101,7 @@ export default function Home() {
     })
       .then((response) => response.json())
       .then((info) => {
-        console.log('Response:', info);
+        //console.log('Response:', info);
       })
       .catch((error) => {
         console.error('Error:', error);

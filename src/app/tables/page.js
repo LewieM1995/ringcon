@@ -13,7 +13,7 @@ function data_tables() {
 
   const [filterQuery, setFilterQuery] = useState('');
   const [selectedOption, setSelectedOption] = useState(null);
-  const db = 'http://localhost:4000/data_table';
+  const db = 'https://policeappserver.duckdns.org:4000/data_table';
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15
   //const productSize = selectedOption?.value;
@@ -35,7 +35,7 @@ function data_tables() {
       try {
         const response = await fetch(`${db}?productSize=${productSize}`);
         const result = await response.json();
-        console.log(result);
+        /*console.log(result);*/
         setData(result);
       } catch (error) {
         console.error('Error fetching data:', error);

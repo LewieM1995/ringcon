@@ -14,7 +14,7 @@ import { calculateBarData, testfunc, testfuncTwo } from './CalcBarData';
 function graph() {
 
   const [selectedOption, setSelectedOption] = useState(null);
-  const db = 'http://localhost:4000/data';
+  const db = 'https://policeappserver.duckdns.org:4000/data';
   const productSize = selectedOption?.value;
 
   const [data, setData] = useState([]);
@@ -39,10 +39,8 @@ function graph() {
     }
   }, [selectedOption]);
 
-  const labelMap = data.map(item => item.submission_time)
-
   
-
+  const labelMap = data.map(item => item.submission_time);
 
   return (
     <main className="main-container">
@@ -65,7 +63,7 @@ function graph() {
           onChange={handleDropdownChange}
           />
         </section>
-        {selectedOption && (
+        {selectedOption && data && (
           <section className="chart-section">
           <Charts data={data.map(item => item.weight)} 
           lowerLimit={testfunc(productSize, 'lowerLimit')} 
