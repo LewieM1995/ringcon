@@ -5,7 +5,7 @@ import DataInputs from '../comps/DataInputs';
 import Submit from '../comps/Submit';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './comps.css'
+import './comps.css';
 
 export default function Home() {
 
@@ -32,7 +32,7 @@ export default function Home() {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [minWallThickness, setMinWallThickness] = useState('');
-  const [resConfirm, setResConfirm] = useState('')
+  const [resConfirm, setResConfirm] = useState('');
   
   const handleSeamInspec = (seamInspection) => {
         setSeamInspection(seamInspection);
