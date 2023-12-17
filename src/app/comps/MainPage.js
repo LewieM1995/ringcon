@@ -102,9 +102,9 @@ export default function Home() {
   
       if (!response.ok) {
         throw new Error(`HTTP error! Status ${response.status}`);
+      } else {
+        setResConfirm('Submission to databse complete!')
       }
-      const responseConfirm = await response.json();
-      setResConfirm(responseConfirm);
       event.target.reset();
     } catch (error) {
       console.error('Error', error.message);
