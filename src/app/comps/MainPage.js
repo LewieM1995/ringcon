@@ -75,7 +75,7 @@ export default function Home() {
   const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
 
     if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
       alert('Please fill in all required fields.');
