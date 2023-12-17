@@ -32,8 +32,7 @@ export default function Home() {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [minWallThickness, setMinWallThickness] = useState('');
-  //CHANGE BOTTOMM THREE USESTATE TO USEREF, Handle needs to change and value set to weightRef etc
-    
+  const [resConfirm, setResConfirm] = useState('')
   
   const handleSeamInspec = (seamInspection) => {
         setSeamInspection(seamInspection);
@@ -104,7 +103,8 @@ export default function Home() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status ${response.status}`);
       }
-  
+      const responseConfirm = await response.json();
+      setResConfirm(responseConfirm);
       event.target.reset();
     } catch (error) {
       console.error('Error', error.message);
@@ -141,6 +141,7 @@ export default function Home() {
                 minWallThickness={minWallThickness}
                 handleMinWallThickness={handleMinWallThickness}
           />
+          {<p style={{textAlign:'center'}}>{resConfirm}</p>}
         <Submit  />
     </form>
    );
