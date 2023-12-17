@@ -75,39 +75,42 @@ export default function Home() {
   const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
 
   const handleSubmit = async (event) => {
-    try { 
+    try {
       event.preventDefault();
-
-      if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
-      alert('Please fill in all required fields.');
-      return;
-    };
   
-    fetch(db, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=UTF-8' },
-      body: JSON.stringify({
-        shifts: shiftValue,
-        operator: operatorName,
-        line: lineValue,
-        check_type: typeCheck,
-        product_size: selectedSize,
-        cavity: selectCavity,
-        visual_inspection: inspectionValue,
-        seam_inspection: seamInspection,
-        weight: weight,
-        height: height,
-        minimum_wall_thickness: minWallThickness
-      })
-    });
-      if (!response.ok){
+      if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+  
+      const response = await fetch(db, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+        body: JSON.stringify({
+          shifts: shiftValue,
+          operator: operatorName,
+          line: lineValue,
+          check_type: typeCheck,
+          product_size: selectedSize,
+          cavity: selectCavity,
+          visual_inspection: inspectionValue,
+          seam_inspection: seamInspection,
+          weight: weight,
+          height: height,
+          minimum_wall_thickness: minWallThickness
+        })
+      });
+  
+      if (!response.ok) {
         throw new Error(`HTTP error! Status ${response.status}`);
       }
+  
       event.target.reset();
     } catch (error) {
       console.error('Error', error.message);
     }
   };
+  
 
 
   return (
