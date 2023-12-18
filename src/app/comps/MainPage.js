@@ -45,6 +45,7 @@ export default function Home() {
     };
   const handleSize = (selectedSize) => {
         setSelectedSize(selectedSize);
+        setResConfirm('');
       };
   const handleTypeCheck = (typeCheck) => {
         setTypeCheck(typeCheck);
@@ -103,7 +104,7 @@ export default function Home() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status ${response.status}`);
       } else {
-        setResConfirm('Submission to databse complete!')
+        setResConfirm('Submission to database complete!')
       }
       event.target.reset();
     } catch (error) {
