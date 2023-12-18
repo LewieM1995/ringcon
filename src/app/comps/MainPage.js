@@ -55,21 +55,24 @@ export default function Home() {
     const regex = /^\d{0,3}(\.\d{0,4})?$/;
     if (regex.test(inputValue)) {
       setWeight(inputValue);
-    }
+    };
+    setResConfirm('');
   };
   const handleHeight = (e) => {
     const inputValue = e.target.value;
     const regex = /^\d{0,3}(\.\d{0,4})?$/;
     if (regex.test(inputValue)) {
       setHeight(inputValue);
-    }
+    };
+    setResConfirm('');
   };
   const handleMinWallThickness = (event) => {
     const inputValue = event.target.value;
     const regex = /^([0-1](\.\d{0,4})?)?$/;
     if (regex.test(inputValue)) {
       setMinWallThickness(inputValue);
-    }
+    };
+    setResConfirm('');
   };
 
   const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
