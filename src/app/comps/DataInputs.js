@@ -80,15 +80,15 @@ function DataInputs({ typeCheck, selectedSize, selectCavity, inspectionValue, se
         </div>
     <h1>Measurements</h1>
         <div className='measurement-inputs'>
-            <label>Weight(Grams):</label>
+            <label>Weight(Grams): {weightString}</label>
             <br/>
             <input type="text" placeholder={weightString} value={weight} onChange={handleWeight}/>
             <br/>
-            <label>Height(mm):</label>
+            <label>Height(mm): {sizeString}</label>
             <br/>
             <input type="text" placeholder={sizeString} value={height} onChange={handleHeight}/>
             <br/>
-            <label>Min Wall:</label>
+            <label>Min Wall: 0.7 - 1.4</label>
             <br/>
             <input type="text" placeholder="range: 0.7 - 1.4" value={minWallThickness} onChange={handleMinWallThickness}/>
         </div>
