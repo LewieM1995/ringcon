@@ -10,14 +10,11 @@ This project is a simplified application intended to facilitate the input of Qua
 ## Installation Instructions
 Clone the Repository:
 
-git clone https://github.com/LewieM1995/ringcon.git
-cd ringcon
+git clone https://github.com/LewieM1995/InputApp.git
+cd InputApp
 
 Install Dependencies:
 npm install
-
-Create an Environment File:
-Create a .env.local file at the root and store any private variables.
 
 Run the Development Server:
 npm run dev
