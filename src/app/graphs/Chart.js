@@ -26,8 +26,9 @@ const ChartComponent = ({ barColors, data, type, labels, label, lowerLimit, uppe
               label: label,
               data: data,
               backgroundColor: barColors || 'rgba(255, 0, 0, 0.5)',
-              tension: 0.5
-            },
+              tension: 0.1,
+              borderColor: 'rgb(255, 99, 132)',
+            }
           ],
         },
         options: {

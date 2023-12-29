@@ -20,14 +20,14 @@
 }
 
 .chart-section {
-  padding: 20px;
+  padding: 10px;
 }
 
 .chart-canvas {
   width: 100%;
   margin-bottom: 2rem;
-  border-radius: 10px;
-  background-color: aliceblue;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
 
