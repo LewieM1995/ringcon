@@ -1,6 +1,6 @@
 .machine-details-container,
 .data-inputs-container {
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 
@@ -32,4 +32,4 @@
         width: 400px;
         margin: auto;
     }
-}
+  }

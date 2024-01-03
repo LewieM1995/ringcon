@@ -7,6 +7,13 @@
 
 .css-b62m3t-container {
     margin: auto auto;
+    margin: auto;
+    width: 280px;
+}
+
+.dropdown-container form {
+    margin: auto;
+    margin-bottom: 20px;
     width: 300px;
 }
 
