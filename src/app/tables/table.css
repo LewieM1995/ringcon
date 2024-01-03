@@ -5,17 +5,20 @@
     margin-bottom: 10px;
 }
 
-.css-b62m3t-container {
-    margin: auto auto;
+.dropdown-container {
+    width: 290px;
     margin: auto;
-    width: 280px;
 }
 
 .dropdown-container form {
     margin: auto;
     margin-bottom: 20px;
-    width: 280px;
+    width: 290px;
 }
+
+.nav-btn-container button {
+    margin: 10px;
+  }
 
 .pagination-div {
     width: 75%;
