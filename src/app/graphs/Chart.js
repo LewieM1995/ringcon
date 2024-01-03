@@ -8,7 +8,6 @@ const ChartComponent = ({ barColors, data, type, labels, label, lowerLimit, uppe
 
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
-  console.log('Props', barColors, data, type, labels, label, lowerLimit, upperLimit, yAxisLabel);
 
   useEffect(() => {
     if (chartRef.current && data && data.length > 0) {
