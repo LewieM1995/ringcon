@@ -1,7 +1,5 @@
-
-
 .main-container h2 {
-    color: aliceblue;
+  color: rgb(65, 65, 65);
 }
 
 .nav-btn-container {
@@ -12,11 +10,7 @@
 }
 
 .nav-btn-container button {
-   margin: 10px;
-}
-
-.dropdown-container {
-  padding: 20px;
+  margin: 10px;
 }
 
 .chart-section {
@@ -31,18 +25,16 @@
 }
 
 
-@media (min-width: 768px){
-  .dropdown-container {
-    padding: 20px;
-    width: 300px;
-    margin: auto;
-  }
+@media (min-width: 768px) {
   .chart-section {
     width: 700px;
     margin: auto;
   }
   .chart-canvas {
     padding: 10px;
-
   }
+  .dropdown-container {
+    width: 290px;
+    margin: auto;
+}
 }

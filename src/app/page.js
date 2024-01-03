@@ -7,11 +7,10 @@ import Description from './Description';
 
 export default function Home() {
 
-
   return (
-   <main className="main main-container">
-      <Description />
-      <MainPage /> 
-   </main>   
+      <main className="main main-container">
+        <Description />
+        <MainPage />
+      </main>
   );
 }

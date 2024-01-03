@@ -7,7 +7,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange, hasMoreData }) => {
       <Button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
         Prev
       </Button>
-      <span style={{color:'aliceblue'}} >{currentPage}/{totalPages}</span>
+      <span>{currentPage}/{totalPages}</span>
       <Button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages || !hasMoreData}>
         Next
       </Button>

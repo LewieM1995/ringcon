@@ -6,29 +6,30 @@ import Chart from 'chart.js/auto';
 
 const ChartComponent = ({ barColors, data, type, labels, label, lowerLimit, upperLimit, yAxisLabel }) => {
 
-    const chartRef = useRef(null);
-    const chartInstanceRef = useRef(null);
-
+  const chartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
+  console.log('Props', barColors, data, type, labels, label, lowerLimit, upperLimit, yAxisLabel);
 
   useEffect(() => {
     if (chartRef.current && data && data.length > 0) {
-        if(chartInstanceRef.current){
-            chartInstanceRef.current.destroy();
-        }
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
       const ctx = chartRef.current.getContext('2d');
-      
-    chartInstanceRef.current = new Chart(ctx, {
+
+      chartInstanceRef.current = new Chart(ctx, {
         type: type || 'line',
         data: {
-          labels:  labels,
+          labels: labels,
           datasets: [
             {
               label: label,
               data: data,
-              backgroundColor: barColors || 'rgba(255, 0, 0, 0.5)',
-              tension: 0.1,
+              backgroundColor: type === 'bar' ? barColors : 'rgba(255, 99, 132, 0.2)',
               borderColor: 'rgb(255, 99, 132)',
-            }
+              tension: 0.2,
+              type: type,
+            },
           ],
         },
         options: {

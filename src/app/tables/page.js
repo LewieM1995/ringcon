@@ -19,16 +19,26 @@ function data_tables() {
   //const productSize = selectedOption?.value;
 
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
   const handleDropdownChange = (selectedOption) => {
     setSelectedOption(selectedOption);
-      setCurrentPage(1);
+    setCurrentPage(1);
   };
+
+  const filteredData = data.filter((item) =>
+    Object.values(item).some(
+      (value) =>
+        typeof value === 'string' &&
+        value.toLowerCase().includes(filterQuery.toLowerCase())
+    )
+  );
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const hasMoreData = data.length > 0 && currentItems.length === itemsPerPage;
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const hasMoreData = filteredData.length > 0 && currentItems.length === itemsPerPage;
 
   useEffect(() => {
     const fetchData = async (productSize) => {
@@ -39,6 +49,7 @@ function data_tables() {
         setData(result);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setError(error);
       }
     };
 
@@ -47,87 +58,92 @@ function data_tables() {
     }
   }, [selectedOption]);
 
+  if (error) {
+    return (
+      <div style={{ textAlign: 'center', color: 'black' }}>
+        <h1>Error fetching data</h1>
+        <p>{error.message}</p>
+        <p>This error may be caused by an issue relating to DuckDNS a free DDNS service.</p>
+      </div>
+    )
+  };
 
 
   return (
     <main className="data-main">
       <div className="nav-btn-container" >
-            <Link href="/graphs">
-              <Button>Previous Page</Button>
-            </Link>
+        <Link href="/graphs">
+          <Button>Previous Page</Button>
+        </Link>
       </div>
       <div className="dropdown-container">
-        <h3 style={{ textAlign: 'center', color:'aliceblue' }} >Select a product size</h3>
-          <Dropdown options={[
-            { label: '10LT', value: '10LT' },
-            { label: '15LT', value: '15LT' },
-            { label: '20LT', value: '20LT' },
-          ]} 
+        <h3 style={{ textAlign: 'center'}} >Select a product size</h3>
+        <Dropdown options={[
+          { label: '10LT', value: '10LT' },
+          { label: '15LT', value: '15LT' },
+          { label: '20LT', value: '20LT' },
+        ]}
           value={selectedOption}
           onChange={handleDropdownChange}
-          />
-          <Form onSubmit={(e)=> e.preventDefault()} >
-            <Form.Group>
-              <Form.Control style={{marginTop: '5px'}}type="text" placeholder="Filter data..." value={filterQuery}
-                onChange={(e) => setFilterQuery(e.target.value)} />
-            </Form.Group>
-          </Form>
+        />
+        <Form onSubmit={(e) => e.preventDefault()} >
+          <Form.Group>
+            <Form.Control style={{ marginTop: '5px' }} type="text" placeholder="Filter by date/operator/shift" value={filterQuery}
+              onChange={(e) => setFilterQuery(e.target.value)} />
+          </Form.Group>
+        </Form>
       </div>
       <div className="table-container">
-      {selectedOption && (
-        <table className="output-table" >
+        {selectedOption && (
+          <table className="output-table" >
             <thead>
-                <tr>
-                    <th>Operator</th>
-                    <th>Machine</th>
-                    <th>Shift</th>
-                    <th>Check Type</th>
-                    <th>Product Size</th>
-                    <th>Cavity</th>
-                    <th>Visual Inspection</th>
-                    <th>Seam Inspection</th>
-                    <th>Weight</th>
-                    <th>Height</th>
-                    <th>Wall Thickness</th>
-                    <th>Time</th>
-                </tr>
-            </thead> 
-        <tbody>
-            {currentItems.filter((item) => 
-            Object.values(item).some(
-              (value) =>
-              typeof value === 'string' && 
-              value.toLowerCase().includes(filterQuery.toLowerCase())
-            )).map((item, index) => {
-              return(
-              <tr key={index}>
-                <td>{item.operator}</td>
-                <td>{item.line}</td>
-                <td>{item.shift}</td>
-                <td>{item.check_type}</td>
-                <td>{item.product_size}</td>
-                <td>{item.cavity}</td>
-                <td>{item.visual_inspection}</td>
-                <td>{item.seam_inspection}</td>
-                <td>{item.weight}</td>
-                <td>{item.height}</td>
-                <td>{item.minimum_wall_thickness}</td>
-                <td>{item.submission_time}</td>
+              <tr>
+                <th>Operator</th>
+                <th>Machine</th>
+                <th>Shift</th>
+                <th>Check Type</th>
+                <th>Product Size</th>
+                <th>Cavity</th>
+                <th>Visual Inspection</th>
+                <th>Seam Inspection</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Wall Thickness</th>
+                <th>Time</th>
               </tr>
-            )})}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {currentItems.map((item, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{item.operator}</td>
+                      <td>{item.line}</td>
+                      <td>{item.shift}</td>
+                      <td>{item.check_type}</td>
+                      <td>{item.product_size}</td>
+                      <td>{item.cavity}</td>
+                      <td>{item.visual_inspection}</td>
+                      <td>{item.seam_inspection}</td>
+                      <td>{item.weight}</td>
+                      <td>{item.height}</td>
+                      <td>{item.minimum_wall_thickness}</td>
+                      <td>{item.submission_time}</td>
+                    </tr>
+                  )
+                })}
+            </tbody>
+          </table>
+        )}
       </div>
       <div className="pagination-div" >
-      {selectedOption && (
-        <Pagination 
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-          hasMoreData={hasMoreData}
-        />
-      )}
+        {selectedOption && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+            hasMoreData={hasMoreData}
+          />
+        )}
       </div>
     </main>
   );

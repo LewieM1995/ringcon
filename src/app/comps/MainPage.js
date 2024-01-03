@@ -3,9 +3,10 @@
 import MachineDetails from './MachineDetails';
 import DataInputs from '../comps/DataInputs';
 import Submit from '../comps/Submit';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './comps.css';
+import { useTheme } from '../../../sharedcomps/ThemeContext';
 
 export default function Home() {
 
@@ -23,7 +24,7 @@ export default function Home() {
     setLineValue(value);
   };
 
-//handles and useState for DataInputs comp
+  //handles and useState for DataInputs comp
   const [typeCheck, setTypeCheck] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
   const [selectCavity, setSelectedCavity] = useState("");
@@ -33,23 +34,23 @@ export default function Home() {
   const [height, setHeight] = useState("");
   const [minWallThickness, setMinWallThickness] = useState('');
   const [resConfirm, setResConfirm] = useState('');
-  
+
   const handleSeamInspec = (seamInspection) => {
-        setSeamInspection(seamInspection);
-    };
+    setSeamInspection(seamInspection);
+  };
   const handleVisualInspec = (inspectionValue) => {
-        setInspectionValue(inspectionValue);
-    };
+    setInspectionValue(inspectionValue);
+  };
   const handleCavity = (selectCavity) => {
-        setSelectedCavity(selectCavity);
-    };
+    setSelectedCavity(selectCavity);
+  };
   const handleSize = (selectedSize) => {
-        setSelectedSize(selectedSize);
-        setResConfirm('');
-      };
+    setSelectedSize(selectedSize);
+    setResConfirm('');
+  };
   const handleTypeCheck = (typeCheck) => {
-        setTypeCheck(typeCheck);
-      };
+    setTypeCheck(typeCheck);
+  };
   const handleWeight = (e) => {
     const inputValue = e.target.value;
     const regex = /^\d{0,3}(\.\d{0,4})?$/;
@@ -80,12 +81,12 @@ export default function Home() {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-  
+
       if (!shiftValue || !operatorName || !lineValue || !typeCheck || !selectedSize || !selectCavity || !inspectionValue || !seamInspection || !weight || !height || !minWallThickness) {
         alert('Please fill in all required fields.');
         return;
       }
-  
+
       const response = await fetch(db, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json; charset=UTF-8' },
@@ -103,7 +104,7 @@ export default function Home() {
           minimum_wall_thickness: minWallThickness
         })
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status ${response.status}`);
       } else {
@@ -112,41 +113,42 @@ export default function Home() {
       event.target.reset();
     } catch (error) {
       console.error('Error', error.message);
+      if (error.message.includes('Failed to fetch')) {
+        setResConfirm('Failed to connect to the server - DuckDNS might be down');
+      }
     }
   };
-  
-
 
   return (
-    <form id='data-input-form' onSubmit={handleSubmit}>
-          <MachineDetails
-                shiftValue={shiftValue}
-                handleShift={handleShift}
-                operatorName={operatorName}
-                handleOperatorName={handleOperatorName}
-                lineValue={lineValue}
-                handleLineValue={handleLineValue}
-          />
-          <DataInputs
-                typeCheck={typeCheck}
-                handleTypeCheck={handleTypeCheck}
-                selectedSize={selectedSize}
-                handleSize={handleSize}
-                selectCavity={selectCavity}
-                handleCavity={handleCavity}
-                inspectionValue={inspectionValue}
-                handleVisualInspec={handleVisualInspec}
-                seamInspection={seamInspection}
-                handleSeamInspec={handleSeamInspec}
-                weight={weight}
-                handleWeight={handleWeight}
-                height={height}
-                handleHeight={handleHeight}
-                minWallThickness={minWallThickness}
-                handleMinWallThickness={handleMinWallThickness}
-          />
-          {<p style={{textAlign:'center'}}>{resConfirm}</p>}
-        <Submit  />
-    </form>
-   );
-  };
+      <form id='data-input-form' onSubmit={handleSubmit} >
+        <MachineDetails
+          shiftValue={shiftValue}
+          handleShift={handleShift}
+          operatorName={operatorName}
+          handleOperatorName={handleOperatorName}
+          lineValue={lineValue}
+          handleLineValue={handleLineValue}
+        />
+        <DataInputs
+          typeCheck={typeCheck}
+          handleTypeCheck={handleTypeCheck}
+          selectedSize={selectedSize}
+          handleSize={handleSize}
+          selectCavity={selectCavity}
+          handleCavity={handleCavity}
+          inspectionValue={inspectionValue}
+          handleVisualInspec={handleVisualInspec}
+          seamInspection={seamInspection}
+          handleSeamInspec={handleSeamInspec}
+          weight={weight}
+          handleWeight={handleWeight}
+          height={height}
+          handleHeight={handleHeight}
+          minWallThickness={minWallThickness}
+          handleMinWallThickness={handleMinWallThickness}
+        />
+        {<p style={{ textAlign: 'center' }}>{resConfirm}</p>}
+        <Submit />
+      </form>
+  );
+};
