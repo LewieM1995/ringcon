@@ -13,6 +13,7 @@ export default function Home() {
   const [shiftValue, setShiftValue] = useState("");
   const [operatorName, setOperatorName] = useState("");
   const [lineValue, setLineValue] = useState("");
+  const [posting, setPosting] = useState(false);
 
   const handleShift = (value) => {
     setShiftValue(value);
@@ -87,6 +88,7 @@ export default function Home() {
         return;
       }
 
+      setPosting(true);
       const response = await fetch(db, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json; charset=UTF-8' },
@@ -108,6 +110,7 @@ export default function Home() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status ${response.status}`);
       } else {
+        setPosting(false);
         setResConfirm('Submission to database complete!')
       }
       event.target.reset();
@@ -147,7 +150,7 @@ export default function Home() {
           minWallThickness={minWallThickness}
           handleMinWallThickness={handleMinWallThickness}
         />
-        {<p style={{ textAlign: 'center' }}>{resConfirm}</p>}
+          {setPosting ? <p style={{ textAlign: 'center' }}> Sending... </p> : <p style={{ textAlign: 'center' }}>{resConfirm}</p>
         <Submit />
       </form>
   );
