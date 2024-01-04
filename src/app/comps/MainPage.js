@@ -150,7 +150,7 @@ export default function Home() {
           minWallThickness={minWallThickness}
           handleMinWallThickness={handleMinWallThickness}
         />
-          {setPosting ? <p style={{ textAlign: 'center' }}> Sending... </p> : <p style={{ textAlign: 'center' }}>{resConfirm}</p>
+          {posting ? <p style={{ textAlign: 'center' }}> Sending... </p> : <p style={{ textAlign: 'center' }}>{resConfirm}</p>
         <Submit />
       </form>
   );
