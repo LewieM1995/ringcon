@@ -10,8 +10,8 @@ This project is a simplified application intended to facilitate the input of Qua
 ## Installation Instructions
 Clone the Repository:
 
-git clone https://github.com/LewieM1995/InputApp.git
-cd InputApp
+git clone https://github.com/LewieM1995/ringcon.git
+cd ringcon
 
 Install Dependencies:
 npm install
