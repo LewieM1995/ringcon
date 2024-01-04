@@ -78,6 +78,20 @@ export default function Home() {
   };
 
   const db = 'https://policeappserver.duckdns.org:4000/ringcon/data';
+  
+  const resetForm = () => {
+    setShiftValue("");
+    setOperatorName("");
+    setLineValue("");
+    setTypeCheck("");
+    setSelectedSize("");
+    setSelectedCavity("");
+    setInspectionValue("");
+    setSeamInspection("");
+    setWeight("");
+    setHeight("");
+    setMinWallThickness("");
+  };
 
   const handleSubmit = async (event) => {
     try {
@@ -111,7 +125,8 @@ export default function Home() {
         throw new Error(`HTTP error! Status ${response.status}`);
       } else {
         setPosting(false);
-        setResConfirm('Submission to database complete!')
+        setResConfirm('Submission to database complete!');
+        resetForm();
       }
       event.target.reset();
     } catch (error) {
